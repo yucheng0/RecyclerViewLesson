@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 val TAG = "myTag"
 class MyAdapter(val items: ArrayList<DataInfo> ,var context: Context):RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
-
+// 嵌套類
     class MyViewHolder(val myview: View) : RecyclerView.ViewHolder(myview) {
         val textview = myview.findViewById<TextView>(R.id.textView)
         val tvprice = myview.findViewById<TextView>(R.id.tvPrice)
@@ -20,12 +20,10 @@ class MyAdapter(val items: ArrayList<DataInfo> ,var context: Context):RecyclerVi
         return MyViewHolder(myview)
     }
 
-    override fun onBindViewHolder(p0: MyViewHolder, p1: Int) {
+       override fun onBindViewHolder(p0: MyViewHolder, p1: Int) {
         p0.textview.text = items[p1].fruit
-        Log.d(TAG, "items[p1].fruit = ${items[p1].fruit} ")
         p0.tvprice.text = items[p1].price.toString()
-        Log.d(TAG, "items[p1].fruit = ${items[p1].price} ")
-    }
+     }
 
     override fun getItemCount(): Int = items.size
 
