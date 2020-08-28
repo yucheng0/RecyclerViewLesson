@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 val TAG = "myTag"
 class MyAdapter(val items: ArrayList<DataInfo> ,var context: Context):RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
-    class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        val textview = view.findViewById<TextView>(R.id.textView)
-        val tvprice = view.findViewById<TextView>(R.id.tvPrice)
+    class MyViewHolder(val myview: View) : RecyclerView.ViewHolder(myview) {
+        val textview = myview.findViewById<TextView>(R.id.textView)
+        val tvprice = myview.findViewById<TextView>(R.id.tvPrice)
     }
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MyViewHolder {
-        val view = LayoutInflater.from(p0.context).inflate(R.layout.itemlayout,p0,false)
-        return MyViewHolder(view)
+        val myview = LayoutInflater.from(p0.context).inflate(R.layout.itemlayout,p0,false)
+        return MyViewHolder(myview)
     }
 
     override fun onBindViewHolder(p0: MyViewHolder, p1: Int) {
